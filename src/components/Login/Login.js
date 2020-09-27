@@ -58,7 +58,7 @@ export default function Login(props) {
             gutterBottom
             color="primary"
           >
-            B&W Notes
+            "/path"
           </Typography>
 
           <Formik

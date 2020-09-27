@@ -5,7 +5,7 @@ import LoginComponent from '../components/Login/LoginComponent'
 
 const routes = [
   {
-    path: '/notes-dashboard',
+    path: '/dashboard',
     exact: true,
     component: App,
   },

@@ -2,11 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
@@ -16,11 +12,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    backgroundColor: theme.palette.background.default,
-  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
@@ -28,9 +19,14 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
     backgroundColor: theme.palette.background.default,
+    borderColor: theme.palette.background.default
   },
   // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    minHeight: 90,
+    width: '100%',
+    backgroundColor: theme.palette.background.default
+  },
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
@@ -53,13 +49,6 @@ export default function Navigation(props) {
   return (
     <div>
       <CssBaseline />
-      <AppBar elevation={1} position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" noWrap>
-            Permanent drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <Drawer
         className={classes.drawer}
         variant="permanent"
@@ -69,15 +58,13 @@ export default function Navigation(props) {
         anchor="left"
       >
         <div className={classes.toolbar} />
-        <Divider />
         <List className={classes.list}>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {['My paths', '1', '2', '3'].map((text, index) => (
             <ListItem className={classes.listItem} button key={text}>
               <ListItemText primary={text} />
             </ListItem>
           ))}
         </List>
-        <Divider />
       </Drawer>
     </div>
   )
