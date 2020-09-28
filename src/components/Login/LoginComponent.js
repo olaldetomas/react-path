@@ -18,7 +18,7 @@ class LoginComponent extends React.Component {
   onSubmit = async (values) => {
     const result = await login(values)
     if (result) {
-      this.setState({ redirect: '/notes-dashboard' })
+      this.setState({ redirect: '/dashboard' })
     }
   }
 

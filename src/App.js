@@ -1,35 +1,26 @@
 import React from 'react'
-import './styles/App.css'
 import NavigationComponent from './components/Navigation/NavigationComponent'
-import { makeStyles } from '@material-ui/core/styles'
+import appStyles from './styles/appStyles'
 import CardPath from './components/Path/CardPath'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  toolbar: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.default,
-    padding: theme.spacing(3),
-  },
-}))
-
+import { Box } from '@material-ui/core'
 
 function App() {
-  const classes = useStyles()
+  const classes = appStyles()
 
   return (
     <div className={classes.root}>
-      <div>
         <NavigationComponent />
-      </div>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <CardPath />
-        <CardPath />
-      </main>
+        <Box className={classes.boxContainer}> 
+          <CardPath />
+          <CardPath />
+          <CardPath />
+          <CardPath />
+          <CardPath />
+          <CardPath />
+          <CardPath />
+          <CardPath />
+          <CardPath />
+        </Box>
     </div>
   )
 }

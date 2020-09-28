@@ -6,6 +6,11 @@ import ConfigRoutes from './api/routes'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
+  timeline: {
+    primary: '#5e5c5b',
+    nautral: '#5e5c5b', 
+    main: '#5e5c5b',
+  },
   palette: {
     type: 'dark',
     primary: {
@@ -17,6 +22,9 @@ const theme = createMuiTheme({
     secondary: {
       main: '#1f1e1c',
       // dark: will be calculated from palette.secondary.main,
+    },
+    timeline: {
+      main: '#5e5c5b',
     },
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.

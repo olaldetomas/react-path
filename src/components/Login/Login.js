@@ -64,7 +64,7 @@ export default function Login(props) {
           <Formik
             initialValues={{
               email: props.email,
-              password: props.password
+              password: props.password,
             }}
             validationSchema={Yup.object({
               email: Yup.string()
@@ -93,9 +93,9 @@ export default function Login(props) {
                       ? errors.email
                       : ' '
                   }
-                  error={errors.email && touched.email && errors.email
-                    ? true
-                    : false}
+                  error={
+                    errors.email && touched.email && errors.email ? true : false
+                  }
                 />
 
                 <Field
@@ -112,9 +112,11 @@ export default function Login(props) {
                       ? errors.password
                       : ' '
                   }
-                  error={errors.password && touched.password && errors.password
-                    ? true
-                    : false}
+                  error={
+                    errors.password && touched.password && errors.password
+                      ? true
+                      : false
+                  }
                 />
 
                 <Button
@@ -126,7 +128,7 @@ export default function Login(props) {
                   color="primary"
                   type="submit"
                 >
-                  Sing in
+                  Login in
                 </Button>
 
                 <Button
@@ -137,7 +139,7 @@ export default function Login(props) {
                   color="secondary"
                   type="submit"
                 >
-                  Google
+                  Login in with google
                 </Button>
               </Form>
             )}
