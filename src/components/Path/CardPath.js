@@ -39,16 +39,20 @@ export default function CardPath(props) {
           </div>
         </div>
         <CardContent className={classes.cardPathContent}>
-          <Typography variant="h6">Lizard</Typography>
-          Node.ju Descripcion de las cosas que voy haciendo y que se yo aslkda
-          asda aklsd asd as asd a
+          <Typography variant="h6">{props.path.title}</Typography>
+
+          <div className={classes.cardPathDescription}>
+            {props.path.description}
+          </div>
           <CardActions className={classes.cardActions}>
+            
             <Tooltip title="Favourite" arrow>
-              <IconButton size="small">
+              <IconButton size="small" onClick={props.onFav}>
                 <StarBorder className={classes.iconButton} />
               </IconButton>
             </Tooltip>
-            <Tooltip title="Edit" arrow>
+
+            <Tooltip title="Edit" arrow onClick={props.onEdit}>
               <IconButton size="small">
                 <Edit className={classes.iconButton} />
               </IconButton>
