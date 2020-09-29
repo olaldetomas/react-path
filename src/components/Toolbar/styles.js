@@ -15,6 +15,9 @@ export default makeStyles((theme) => ({
     color: theme.palette.timeline.main,
     fontSize: 30,
   },
+  dialog: {
+    borderRadius: 10
+  },
   textField: {
     width: 250,
     marginLeft: 10,
@@ -31,5 +34,5 @@ export default makeStyles((theme) => ({
         borderColor: theme.palette.timeline.main,
       },
     },
-  },
+  }
 }))

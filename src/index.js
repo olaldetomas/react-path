@@ -8,7 +8,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 const theme = createMuiTheme({
   timeline: {
     primary: '#5e5c5b',
-    nautral: '#5e5c5b', 
+    nautral: '#5e5c5b',
     main: '#5e5c5b',
   },
   palette: {
@@ -29,6 +29,13 @@ const theme = createMuiTheme({
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
     tonalOffset: 0.2,
+  },
+  overrides: {
+    MuiDialog: {
+      paper: {
+        borderRadius: 10,
+      }
+    }
   }
 })
 
