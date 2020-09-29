@@ -8,8 +8,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
     backgroundColor: theme.palette.background.default,
-    marginTop: 90,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 0,
+    paddingRight: 0,
   },
 }))
