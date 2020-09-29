@@ -46,18 +46,18 @@ export default makeStyles((theme) => ({
     minWidth: 180,
     maxHeight: 80,
     maxWidth: 180,
-    backgroundColor: theme.palette.background.paper
+    backgroundColor: theme.palette.background.paper,
   },
   cardPathContent: {
     display: 'flex',
     flexDirection: 'column',
-    paddingLeft: 0
+    paddingLeft: 0,
   },
   cardActions: {
-    width: '100%', 
+    width: '100%',
     justifyContent: 'flex-end',
   },
   iconButton: {
     color: theme.palette.timeline.main,
-  }
+  },
 }))

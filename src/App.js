@@ -12,6 +12,11 @@ function App() {
         <NavigationComponent />
         <Box className={classes.boxContainer}> 
           <CardPathComponent/>
+          <CardPathComponent/>
+          <CardPathComponent/>
+          <CardPathComponent/>
+          <CardPathComponent/>
+          <CardPathComponent/>
         </Box>
     </div>
   )

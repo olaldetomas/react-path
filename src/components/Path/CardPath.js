@@ -2,11 +2,57 @@ import React from 'react'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardPathStyles from './styles'
-import { Typography, CardActions, IconButton, Tooltip } from '@material-ui/core'
-import { Edit, StarBorder } from '@material-ui/icons'
+import { Typography, CardActions, IconButton, Tooltip, Icon, } from '@material-ui/core'
+import {
+  Edit,
+  StarBorder,
+  Star,
+  BookmarkBorder,
+  Bookmark,
+} from '@material-ui/icons'
 
 export default function CardPath(props) {
   const classes = CardPathStyles()
+
+  let isFavourite = props.path.favourite
+
+  const favouriteButton = () => {
+    if (isFavourite) {
+      return (
+        <Star
+          style={{ color: '#fdd835', opacity: 0.8 }}
+          className={classes.iconButton}
+        />
+      )
+    } else {
+      return <StarBorder className={classes.iconButton} />
+    }
+  }
+
+  const markerkButton = () => {
+    const marker = props.path.marker ? props.path.marker : null
+
+    if (marker) {
+      return (
+        <Tooltip title={marker.name} arrow>
+          <Icon size="small">
+            <Bookmark
+              style={{ color: marker.color, opacity: 0.8 }}
+              className={classes.iconButton}
+            />
+          </Icon>
+        </Tooltip>
+      )
+    } else {
+      return (
+        <Tooltip title="Marker" arrow>
+          <IconButton size="small" onClick={props.onBookmark}>
+            <BookmarkBorder className={classes.iconButton} />
+          </IconButton>
+        </Tooltip>
+      )
+    }
+  }
 
   return (
     <div>
@@ -45,10 +91,10 @@ export default function CardPath(props) {
             {props.path.description}
           </div>
           <CardActions className={classes.cardActions}>
-            
-            <Tooltip title="Favourite" arrow>
+            {markerkButton()}
+            <Tooltip title="Fav" arrow>
               <IconButton size="small" onClick={props.onFav}>
-                <StarBorder className={classes.iconButton} />
+                {favouriteButton()}
               </IconButton>
             </Tooltip>
 
