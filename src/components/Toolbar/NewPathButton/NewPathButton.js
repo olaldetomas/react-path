@@ -1,13 +1,9 @@
 import React from 'react'
-import { Tooltip, Dialog, DialogContent, DialogTitle, IconButton, CardContent, Button, TextField, Card, Typography } from '@material-ui/core'
+import { Tooltip, Dialog, DialogContent, DialogTitle, IconButton, Button, TextField, Typography } from '@material-ui/core'
 import { AddSharp } from '@material-ui/icons'
 import useStyles from '../styles'
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
-import { MuiDialogTitle } from '@material-ui/core';
-import MuiDialogContent from '@material-ui/core/DialogContent';
-import MuiDialogActions from '@material-ui/core/DialogActions';
-
 
 export default function NewPathButton(props) {
   const [open, setOpen] = React.useState(false);

@@ -15,15 +15,6 @@ function App() {
         <AppBarComponent />
         <Box className={classes.boxContainer}>
           <CardPathComponent />
-          <CardPathComponent />
-          <CardPathComponent />
-          <CardPathComponent />
-          <CardPathComponent />
-          <CardPathComponent />
-          <CardPathComponent />
-          <CardPathComponent />
-          <CardPathComponent />
-          <CardPathComponent />
         </Box>
       </Box>
     </div>
