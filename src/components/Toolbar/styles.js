@@ -15,8 +15,17 @@ export default makeStyles((theme) => ({
     color: theme.palette.timeline.main,
     fontSize: 30,
   },
-  dialog: {
-    borderRadius: 10
+  dialogContent: {
+    width: 350,
+  },
+  input: {
+    marginTop: 5
+  },
+  formControl: {
+    minWidth: '100%',
+    marginBottom: 20,
+    marginTop: 5
+
   },
   textField: {
     width: 250,
@@ -34,5 +43,5 @@ export default makeStyles((theme) => ({
         borderColor: theme.palette.timeline.main,
       },
     },
-  }
+  },
 }))

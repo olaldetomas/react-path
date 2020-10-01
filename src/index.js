@@ -8,11 +8,15 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 const theme = createMuiTheme({
   timeline: {
     primary: '#5e5c5b',
-    nautral: '#5e5c5b',
+    neutral: '#5e5c5b',
     main: '#5e5c5b',
   },
   palette: {
     type: 'dark',
+    background: {
+      paper: '#2F2F2F',
+      default: '#212121'
+    },
     primary: {
       // light: will be calculated from palette.primary.main,
       main: '#f0f0f0',
@@ -34,9 +38,14 @@ const theme = createMuiTheme({
     MuiDialog: {
       paper: {
         borderRadius: 10,
-      }
-    }
-  }
+      },
+    },
+    MuiCard: {
+      root: {
+        borderRadius: 10,
+      },
+    },
+  },
 })
 
 ReactDOM.render(

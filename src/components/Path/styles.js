@@ -6,7 +6,6 @@ export default makeStyles((theme) => ({
     width: 250,
     height: 180,
     margin: 10,
-    borderRadius: 10,
   },
   timeLine: {
     display: 'flex',
