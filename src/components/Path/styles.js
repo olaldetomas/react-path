@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   root: {
     display: 'flex',
     width: 250,
-    height: 180,
+    height: 210,
     margin: 10,
   },
   timeLine: {
@@ -41,11 +41,13 @@ export default makeStyles((theme) => ({
     backgroundColor: theme.palette.timeline.main,
   },
   cardPathDescription: {
-    minHeight: 80,
+    minHeight: 110,
     minWidth: 180,
-    maxHeight: 80,
+    maxHeight: 110,
     maxWidth: 180,
     backgroundColor: theme.palette.background.paper,
+    overflow: 'auto',
+    wordWrap: 'break-word',
   },
   cardPathContent: {
     display: 'flex',

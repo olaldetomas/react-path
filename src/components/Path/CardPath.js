@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardPathStyles from './styles'
-import { Typography, CardActions, IconButton, Tooltip, Icon, } from '@material-ui/core'
+import { Grid, Typography, CardActions, IconButton, Tooltip, Icon, } from '@material-ui/core'
 import {
   Edit,
   StarBorder,
@@ -69,12 +69,20 @@ export default function CardPath(props) {
             className={classes.lineDivider}
             style={{ marginBottom: 3 }}
           ></div>
+          <div
+            className={classes.lineDivider}
+            style={{ marginBottom: 3 }}
+          ></div>
           <div className={classes.bolita}>
             <div className={classes.centerBolita}></div>
           </div>
           <div
             className={classes.lineDivider}
             style={{ marginBottom: 3, marginTop: 3 }}
+          ></div>
+          <div
+            className={classes.lineDivider}
+            style={{ marginBottom: 3 }}
           ></div>
           <div
             className={classes.lineDivider}
@@ -87,9 +95,10 @@ export default function CardPath(props) {
         <CardContent className={classes.cardPathContent}>
           <Typography variant="h6">{props.path.title}</Typography>
 
-          <div className={classes.cardPathDescription}>
+          <Typography variant="body2" className={classes.cardPathDescription}>
             {props.path.description}
-          </div>
+          </Typography>
+
           <CardActions className={classes.cardActions}>
             {markerkButton()}
             <Tooltip title="Fav" arrow>

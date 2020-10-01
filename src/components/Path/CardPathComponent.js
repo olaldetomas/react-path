@@ -5,12 +5,12 @@ export default function CardPathComponent() {
   const model = {
     id: 1,
     title: 'Titulo 1',
-    description: 'descripcion ashkjdfb asjnajn sdajk asdfjk asdfjk sdjk',
+    description: 'Bueno voy a probar de escribr una descripcion medio lague recien ya que no se como se va a ver la partedl bootom y ',
     favourite: false,
     marker: {
       id: 1,
       color: '#43a047',
-      name: 'Node.js' 
+      name: 'Node.js'
     }
   }
 
@@ -31,5 +31,5 @@ export default function CardPathComponent() {
     return console.log('BOOKMARK')
   }
 
-  return <CardPath path={path} onFav={onFav} onEdit={onEdit} onBookmark={onBookmark}/>
+  return <CardPath path={path} onFav={onFav} onEdit={onEdit} onBookmark={onBookmark} />
 }

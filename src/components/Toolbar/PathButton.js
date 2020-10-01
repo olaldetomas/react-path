@@ -38,7 +38,7 @@ export default function NewPathButton() {
         <PathDialogComponent
           open={true}
           closeDialog={closeDialog}
-          action={'asd'}
+          action={'New path'}
         />
       ) : null}
     </div>
