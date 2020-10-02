@@ -6,17 +6,16 @@ import {
   DialogActions,
   Button,
   TextField,
-  FormControl,
-  InputLabel,
   Select,
+  InputLabel,
   MenuItem,
+  FormControl,
 } from '@material-ui/core'
 import useStyles from './styles'
 import { Formik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 
 export default function NewPathButton(props) {
-
   const styles = useStyles()
 
   return (
@@ -27,24 +26,24 @@ export default function NewPathButton(props) {
         aria-labelledby="form-dialog-title"
         maxWidth="xs"
       >
-        <DialogTitle>
-          {props.action}
-        </DialogTitle>
+        <DialogTitle>{props.action}</DialogTitle>
 
         <DialogContent className={styles.dialogContent}>
           <Formik
+            validateOnChange={true}
             initialValues={{
               title: '',
               description: '',
+              marker: '',
             }}
             validationSchema={Yup.object({
               title: Yup.string()
                 .max(20, 'Max 20 characters')
                 .required('Required'),
-              description: Yup.string().max(100, 'Max 100 characters'),
+              description: Yup.string().max(100, 'Max 100 characters')
             })}
             onSubmit={async (values, { setSubmitting }) => {
-              console.log(values)
+              props.onSubmit(values)
             }}
           >
             {({ errors, touched, isValid, isSubmitting }) => (
@@ -93,24 +92,70 @@ export default function NewPathButton(props) {
                 />
 
                 <FormControl variant="outlined" className={styles.formControl}>
-                  <InputLabel id="demo-simple-select-outlined-label">
-                    Marker
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
-                    label="Age"
+                  <InputLabel id="markerId">Marker</InputLabel>
+                  <Field
+                    id="markerId"
+                    name="marker"
+                    type="select"
+                    as={Select}
+                    variant="outlined"
+                    label="Marker"
                   >
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
+                    {props.markers.map((m) => {
+                      return (
+                        <MenuItem key={m.id} value={m.id}>
+                          {m.name}
+                        </MenuItem>
+                      )
+                    })}
+                  </Field>
                 </FormControl>
+
+                {/* <FormControl
+                  variant="outlined"
+                  className={styles.formControl}
+                  error={
+                    errors.marker && touched.marker && errors.marker
+                      ? true
+                      : false
+                  }
+                >
+                  <InputLabel id="markerId">Marker *</InputLabel>
+                  <Field
+                    id="markerId"
+                    name="marker"
+                    type="select"
+                    as={Select}
+                    variant="outlined"
+                    label="Marker *"
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    {props.markers.map((m) => {
+                      return (
+                        <MenuItem key={m.id} value={m.id}>
+                          {m.name}
+                        </MenuItem>
+                      )
+                    })}
+                  </Field>
+                  <FormHelperText>
+                    {errors.marker && touched.marker && errors.marker
+                      ? errors.marker
+                      : ' '}
+                  </FormHelperText>
+                </FormControl> */}
+
                 <DialogActions>
-                  <Button size="medium" onClick={props.closeDialog} color="primary">
+                  <Button
+                    size="medium"
+                    onClick={props.closeDialog}
+                    color="primary"
+                  >
                     Cancel
                   </Button>
 

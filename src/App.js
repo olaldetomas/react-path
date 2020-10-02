@@ -1,7 +1,7 @@
 import React from 'react'
 import NavigationComponent from './components/Navigation/NavigationComponent'
 import appStyles from './styles/appStyles'
-import CardPathComponent from './components/Path/CardPathComponent'
+import CardPathComponent from './components/Path/Card/CardPathComponent'
 import { Box } from '@material-ui/core'
 import AppBarComponent from './components/Toolbar/AppBarComponent'
 

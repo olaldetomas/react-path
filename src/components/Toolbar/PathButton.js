@@ -23,10 +23,6 @@ export default function NewPathButton() {
     setOpen(true)
   }
 
-  function closeDialog() {
-    setOpen(false)
-  }
-
   return (
     <div>
       <Tooltip title="New path" arrow>
@@ -34,13 +30,7 @@ export default function NewPathButton() {
           <AddSharp className={styles.icon} />
         </IconButton>
       </Tooltip>
-      {open ? (
-        <PathDialogComponent
-          open={true}
-          closeDialog={closeDialog}
-          action={'New path'}
-        />
-      ) : null}
+      {open ? <PathDialogComponent open={true} action={'New path'} /> : null}
     </div>
   )
 }

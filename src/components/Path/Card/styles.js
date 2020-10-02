@@ -8,6 +8,25 @@ export default makeStyles((theme) => ({
     color: 'red',
     height: 90,
   },
+  iconButton: {
+    marginLeft: 20,
+  },
+  icon: {
+    color: theme.palette.timeline.main,
+    fontSize: 30,
+  },
+  dialogContent: {
+    width: 350,
+  },
+  input: {
+    marginTop: 5
+  },
+  formControl: {
+    minWidth: '100%',
+    marginBottom: 20,
+    marginTop: 5
+
+  },
   textField: {
     width: 250,
     marginLeft: 10,

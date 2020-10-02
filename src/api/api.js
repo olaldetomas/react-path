@@ -1,7 +1,6 @@
 import axios from 'axios'
 import config from '../config/config'
 
-
 // URL
 const appPort = config.APP_PORT
 const appHost = config.APP_HOST
@@ -11,7 +10,6 @@ if (process.env.NODE_ENV === 'production') {
 } else {
     axios.defaults.baseURL = `${appHttp}://${appHost}:${appPort}/api/`
 }
-
 
 async function login(authCredentials) {
     return axios
@@ -26,7 +24,21 @@ async function login(authCredentials) {
         })
 }
 
+async function createPath(data) {
+    return axios
+        .post('path', data)
+        .then((response) => {
+            console.log(response)
+            return response.data
+        })
+        .catch((err) => {
+            console.log(err)
+            return null
+        })
+}
+
 
 export {
-    login
+    login,
+    createPath
 }

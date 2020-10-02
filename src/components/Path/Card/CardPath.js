@@ -1,8 +1,8 @@
 import React from 'react'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
-import CardPathStyles from './styles'
-import { Grid, Typography, CardActions, IconButton, Tooltip, Icon, } from '@material-ui/core'
+import CardPathStyles from '../styles'
+import { Typography, CardActions, IconButton, Tooltip, Icon, } from '@material-ui/core'
 import {
   Edit,
   StarBorder,
