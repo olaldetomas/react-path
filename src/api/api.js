@@ -28,7 +28,18 @@ async function createPath(data) {
     return axios
         .post('path', data)
         .then((response) => {
-            console.log(response)
+            return response.data
+        })
+        .catch((err) => {
+            console.log(err)
+            return null
+        })
+}
+
+async function getPaths() {
+    return axios
+        .get('path')
+        .then((response) => {
             return response.data
         })
         .catch((err) => {
@@ -40,5 +51,6 @@ async function createPath(data) {
 
 export {
     login,
-    createPath
+    createPath,
+    getPaths
 }

@@ -6,10 +6,10 @@ import {
   DialogActions,
   Button,
   TextField,
-  Select,
-  InputLabel,
-  MenuItem,
-  FormControl,
+  // Select,
+  // InputLabel,
+  // MenuItem,
+  // FormControl,
 } from '@material-ui/core'
 import useStyles from './styles'
 import { Formik, Form, Field } from 'formik'
@@ -34,7 +34,7 @@ export default function NewPathButton(props) {
             initialValues={{
               title: '',
               description: '',
-              marker: '',
+              // marker: '',
             }}
             validationSchema={Yup.object({
               title: Yup.string()
@@ -91,7 +91,7 @@ export default function NewPathButton(props) {
                   }
                 />
 
-                <FormControl variant="outlined" className={styles.formControl}>
+                {/* <FormControl variant="outlined" className={styles.formControl}>
                   <InputLabel id="markerId">Marker</InputLabel>
                   <Field
                     id="markerId"
@@ -112,42 +112,6 @@ export default function NewPathButton(props) {
                       )
                     })}
                   </Field>
-                </FormControl>
-
-                {/* <FormControl
-                  variant="outlined"
-                  className={styles.formControl}
-                  error={
-                    errors.marker && touched.marker && errors.marker
-                      ? true
-                      : false
-                  }
-                >
-                  <InputLabel id="markerId">Marker *</InputLabel>
-                  <Field
-                    id="markerId"
-                    name="marker"
-                    type="select"
-                    as={Select}
-                    variant="outlined"
-                    label="Marker *"
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    {props.markers.map((m) => {
-                      return (
-                        <MenuItem key={m.id} value={m.id}>
-                          {m.name}
-                        </MenuItem>
-                      )
-                    })}
-                  </Field>
-                  <FormHelperText>
-                    {errors.marker && touched.marker && errors.marker
-                      ? errors.marker
-                      : ' '}
-                  </FormHelperText>
                 </FormControl> */}
 
                 <DialogActions>

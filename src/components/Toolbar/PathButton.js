@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Tooltip, IconButton } from '@material-ui/core'
 import { AddSharp } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
-import PathDialogComponent from '../Path/PathDialog/PathDialogComponent'
+import PathDialog from '../Path/PathDialog/PathDialog'
+import { createPath } from '../../api/api'
+import PathContext from '../../context/PathContext'
 
 const useStyles = makeStyles((theme) => ({
   iconButton: {
@@ -14,13 +16,26 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function NewPathButton() {
-  const [open, setOpen] = useState(null)
-
+export default function PathButton() {
   const styles = useStyles()
+  const { paths, setPaths } = useContext(PathContext)
+  const [open, setOpen] = useState(false)
+
+
+  function closeDialog() {
+    setOpen(false)
+  }
 
   function openDialog() {
     setOpen(true)
+  }
+
+  async function onSubmit(values) {
+    const path = await createPath(values)
+    console.log(paths)
+    setPaths(paths.push(path))
+    console.log(paths)
+    closeDialog()
   }
 
   return (
@@ -30,7 +45,12 @@ export default function NewPathButton() {
           <AddSharp className={styles.icon} />
         </IconButton>
       </Tooltip>
-      {open ? <PathDialogComponent open={true} action={'New path'} /> : null}
+      <PathDialog
+        open={open}
+        closeDialog={closeDialog}
+        action={'New path'}
+        onSubmit={onSubmit}
+      />
     </div>
   )
 }

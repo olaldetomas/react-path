@@ -5,7 +5,6 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    color: 'red',
     height: 90,
   },
   textField: {
