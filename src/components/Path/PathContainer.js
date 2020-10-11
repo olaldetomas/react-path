@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import CardPathComponent from './Card/CardPathComponent'
 import { Box } from '@material-ui/core'
-// import PathContext from '../../context/PathContext'
+import PathContext from '../../context/PathContext'
 import { makeStyles } from '@material-ui/core/styles'
+import { getPaths } from '../../api/api'
 
 const useStyles = makeStyles((theme) => ({
   boxContainer: {
@@ -14,14 +15,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function PathContainer(props) {
-  // const { paths } = useContext(PathContext)
+function PathContainer() {
+  const { paths, setPaths } = useContext(PathContext)
   const classes = useStyles()
+
+  const init = async () => {
+    const data = await getPaths()
+    setPaths(data)
+  }
+
+  useEffect(() => {
+    if (paths.length <= 0) {
+      init()
+    }
+  })
 
   return (
     <Box className={classes.boxContainer}>
-      {props.paths.length >= 1
-        ? props.paths.map((path) => <CardPathComponent path={path} key={path._id} />)
+      {paths.length >= 1
+        ? paths.map((path) => <CardPathComponent path={path} key={path._id} />)
         : null}
     </Box>
   )

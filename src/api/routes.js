@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import App from '../App'
 import LoginComponent from '../components/Login/LoginComponent'
+import Path from '../components/Path/Path'
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     exact: true,
     component: LoginComponent,
   },
+  {
+    path: '/path',
+    exact: true,
+    component: Path,
+  }
 ]
 
 export default function ConfigRoutes() {
