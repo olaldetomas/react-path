@@ -3,11 +3,7 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardPathStyles from '../styles'
 import { Typography, CardActions, IconButton, Tooltip } from '@material-ui/core'
-import {
-  Edit,
-  StarBorder,
-  Star,
-} from '@material-ui/icons'
+import { Edit, StarBorder, Star } from '@material-ui/icons'
 
 export default function CardPath(props) {
   const classes = CardPathStyles()
@@ -18,7 +14,7 @@ export default function CardPath(props) {
     if (isFavourite) {
       return (
         <Star
-          style={{ color: '#fdd835', opacity: 0.8 }}
+          style={{ color: '#000000', opacity: 0.8 }}
           className={classes.iconButton}
         />
       )
@@ -61,30 +57,12 @@ export default function CardPath(props) {
           </div>
           <div
             className={classes.lineDivider}
-            style={{ marginBottom: 3, marginTop: 3 }}
-          ></div>
-          <div
-            className={classes.lineDivider}
-            style={{ marginBottom: 3 }}
-          ></div>
-          <div
-            className={classes.lineDivider}
-            style={{ marginBottom: 3 }}
           ></div>
           <div className={classes.bolita}>
             <div className={classes.centerBolita}></div>
           </div>
           <div
             className={classes.lineDivider}
-            style={{ marginBottom: 3, marginTop: 3 }}
-          ></div>
-          <div
-            className={classes.lineDivider}
-            style={{ marginBottom: 3 }}
-          ></div>
-          <div
-            className={classes.lineDivider}
-            style={{ marginBottom: 3 }}
           ></div>
           <div className={classes.bolita}>
             <div className={classes.centerBolita}></div>

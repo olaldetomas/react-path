@@ -15,7 +15,7 @@ const theme = createMuiTheme({
     type: 'dark',
     background: {
       paper: '#2F2F2F',
-      default: '#212121'
+      default: '#2A2929'
     },
     primary: {
       // light: will be calculated from palette.primary.main,
@@ -29,6 +29,9 @@ const theme = createMuiTheme({
     },
     timeline: {
       main: '#5e5c5b',
+    },
+    cardPath: {
+      main: '#E3C59C',
     },
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
