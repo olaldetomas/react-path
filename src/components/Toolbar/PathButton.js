@@ -40,7 +40,7 @@ export default function PathButton() {
   // }
 
   const newPath = () => {
-    history.push("/path");
+    history.push("/newPath");
   }
 
   return (

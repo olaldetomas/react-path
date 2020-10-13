@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import App from '../App'
 import LoginComponent from '../components/Login/LoginComponent'
-import Path from '../components/Path/Path'
+import Path from '../components/Path/Path/Path'
 
 const routes = [
   {
@@ -16,7 +16,7 @@ const routes = [
     component: LoginComponent,
   },
   {
-    path: '/path',
+    path: '/newPath',
     exact: true,
     component: Path,
   }

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Card, Typography, IconButton } from '@material-ui/core'
 import { AddSharp } from '@material-ui/icons'
-
 import { makeStyles } from '@material-ui/core/styles'
+import PathButtonActions from '../PathButtonActions'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     width: 50,
     height: 50,
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   icon: {
     color: theme.palette.timeline.main,
@@ -51,8 +51,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Path() {
+function Path(props) {
   const styles = useStyles()
+  const [path, setPath] = useState(props.path)
+
+  const onClickSuccess = () => {
+    console.log('save')
+  }
+
+  const onClickCancel = () => {
+    console.log('cancel')
+  }
+
   return (
     <Container className={styles.container}>
       <Card elevation={4} className={styles.cardTitle}>
@@ -64,6 +74,13 @@ function Path() {
       <IconButton className={styles.iconButton}>
         <AddSharp className={styles.icon} />
       </IconButton>
+
+      <PathButtonActions
+        onClickCancel={onClickCancel}
+        onClickSuccess={onClickSuccess}
+        cancelLabel='Cancel'
+        successLabel='Save'
+      />
     </Container>
   )
 }
