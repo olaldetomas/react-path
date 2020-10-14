@@ -19,16 +19,21 @@ function PathContainer() {
   const { paths, setPaths } = useContext(PathContext)
   const classes = useStyles()
 
-  const init = async () => {
-    const data = await getPaths()
-    setPaths(data)
-  }
-
   useEffect(() => {
-    if (paths.length <= 0) {
-      init()
+    let isLoading = true
+
+    getPaths()
+      .then((data) => {
+        if (isLoading) {
+          setPaths(data)
+        }
+      })
+      .catch((err) => console.log(err))
+
+    return () => {
+      isLoading = false
     }
-  })
+  }, [])
 
   return (
     <Box className={classes.boxContainer}>

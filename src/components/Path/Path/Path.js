@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Container, Card, Typography, IconButton } from '@material-ui/core'
 import { AddSharp } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Path(props) {
   const styles = useStyles()
-  const [path, setPath] = useState(props.path)
+  // const [path, setPath] = useState(props.path)
 
   const onClickSuccess = () => {
     console.log('save')
